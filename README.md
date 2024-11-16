@@ -42,10 +42,11 @@ This project is a simple car unlocking and locking system using Flask and MongoD
 ### add_data.py
 
  1. Run the script:
-```bash
-python add_data.py
-```
+   ```bash
+   python add_data.py
+   ```
  2. To unlock a car, send a POST request to `/unlock` with a JSON payload containing `user_id` and `car_id`.
+    
  3. To lock a car, send a POST request to `/lock` with a JSON payload containing `user_id` and `car_id`.
 
 The application will check the user's authorization based on the data stored in the MongoDB users collection.
