@@ -21,10 +21,10 @@ This project is a simple car unlocking and locking system using Flask and MongoD
 
 ## Installation
 1. **Clone the repository:**
-  ```bash
-  git clone https://github.com/XreeceX/Mobilothon
-  cd Mobilothon
-```
+   ```bash
+   git clone https://github.com/XreeceX/Mobilothon
+   cd Mobilothon
+   ```
 2. **Install Dependencies**
    ```bash
    pip install -r requirements.txt
