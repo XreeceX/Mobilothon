@@ -1,17 +1,19 @@
 # app.py
 from flask import Flask, request, jsonify
 from pymongo import MongoClient
+import os
 
 app = Flask(__name__)
 
+password = os.environ["MONGO_PASSWORD"]
 # Connect to MongoDB
-client = MongoClient("mongodb+srv://player:innovation@cluster0.oe6qr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+client = MongoClient(f"mongodb+srv://player:{password}@cluster0.oe6qr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 db = client.car_unlock_system
 users_collection = db['users']
 
 # Helper function to check if the user exists
-def user_exists(user_id, car_id):
-    user = users_collection.find_one({"user_id": user_id, "car_id": car_id})
+def user_exists(user_id, car_id,token):
+    user = users_collection.find_one({"user_id": user_id, "car_id": car_id, "token": token})
     return user
 
 # Endpoint to unlock the car
@@ -20,9 +22,10 @@ def unlock_car():
     data = request.get_json()
     user_id = data.get('user_id')
     car_id = data.get('car_id')
+    token=data.get('token')
     
     # Check if the user exists
-    user = user_exists(user_id, car_id)
+    user = user_exists(user_id, car_id,token)
     
     if user:
         return jsonify({"message": "Car unlocked successfully!"}), 200
@@ -35,9 +38,10 @@ def lock_car():
     data = request.get_json()
     user_id = data.get('user_id')
     car_id = data.get('car_id')
+    token=data.get('token')
     
     # Check if the user exists
-    user = user_exists(user_id, car_id)
+    user = user_exists(user_id, car_id,token)
     
     if user:
         return jsonify({"message": "Car locked successfully!"}), 200
