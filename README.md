@@ -21,19 +21,24 @@ This project is a simple car unlocking and locking system using Flask and MongoD
 
 ## Installation
 1. **Clone the repository:**
+   
    ```bash
    git clone https://github.com/XreeceX/Mobilothon
    cd Mobilothon
    ```
+   
 2. **Install Dependencies**
+
    ```bash
    pip install -r requirements.txt
    ```
-3. **Set up Mongodb**
+   
+4. **Set up Mongodb**
   - Create a MongoDB Atlas cluster or install a local MongoDB instance.
   - Update the connection string in both add_data.py and app.py files.
 
 4. **Run the Application**
+   
    ```bash
    python app.py
    ```
@@ -42,11 +47,13 @@ This project is a simple car unlocking and locking system using Flask and MongoD
 ### add_data.py
 
  1. Run the script:
+
     ```bash
     python add_data.py
     ```
- 2. To unlock a car, send a POST request to `/unlock` with a JSON payload containing `user_id` and `car_id`.
     
- 3. To lock a car, send a POST request to `/lock` with a JSON payload containing `user_id` and `car_id`.
+ 3. To unlock a car, send a POST request to `/unlock` with a JSON payload containing `user_id` and `car_id`.
+    
+ 4. To lock a car, send a POST request to `/lock` with a JSON payload containing `user_id` and `car_id`.
 
 The application will check the user's authorization based on the data stored in the MongoDB users collection.
