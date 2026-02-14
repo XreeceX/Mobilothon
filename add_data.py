@@ -2,7 +2,7 @@ from pymongo import MongoClient
 import random,string
 
 # Replace this with your MongoDB connection string
-client = MongoClient("mongodb+srv://player:innovation@cluster0.oe6qr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+client = MongoClient("placeholder")
 
 db = client['car_unlock_system']  
 collection = db['users']
