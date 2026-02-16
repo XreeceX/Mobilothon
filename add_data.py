@@ -1,8 +1,10 @@
+import os
 from pymongo import MongoClient
-import random,string
+import random
+import string
 
-# Replace this with your MongoDB connection string
-client = MongoClient("placeholder")
+# Use MONGODB_URI env var or placeholder for setup
+client = MongoClient(os.environ.get("MONGODB_URI", "placeholder"))
 
 db = client['car_unlock_system']  
 collection = db['users']

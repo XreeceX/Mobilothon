@@ -33,11 +33,11 @@ This project is a simple car unlocking and locking system using Flask and MongoD
    pip install -r requirements.txt
    ```
    
-4. **Set up Mongodb**
-  - Create a MongoDB Atlas cluster or install a local MongoDB instance.
-  - Update the connection string in both add_data.py and app.py files.
+4. **Set up MongoDB**
+   - Create a MongoDB Atlas cluster or install a local MongoDB instance.
+   - Set the `MONGODB_URI` environment variable, or update the connection string in `add_data.py` and `app.py`.
 
-4. **Run the Application**
+5. **Run the Application**
    
    ```bash
    python app.py
